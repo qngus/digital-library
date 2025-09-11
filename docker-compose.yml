@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16
+    container_name: postgres-books
+    environment:
+      POSTGRES_DB: books
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: passw0rd
+    ports:
+      - "5432:5432"
+
+  backend:
+    image: book-service
+    container_name: book-service
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/books
+    ports:
+      - "8080:8080"
+
+  frontend:
+    image: book-ui
+    container_name: book-ui
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
