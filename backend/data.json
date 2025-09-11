@@ -75,5 +75,110 @@
     "publicationDate": "1960-07-11",
     "summary": "Une exploration des thèmes du racisme et de l'injustice dans le Sud des États-Unis à travers les yeux d'une jeune fille.",
     "pageCount": 281
+  },
+  {
+    "title": "Moby-Dick",
+    "authors": [
+      {
+        "name": "Herman Melville",
+        "books": [
+          { "title": "Moby-Dick" },
+          { "title": "Bartleby, the Scrivener" }
+        ]
+      }
+    ],
+    "publicationDate": "1851-10-18",
+    "summary": "L'obsession du capitaine Ahab pour la chasse à la baleine blanche symbolise la lutte humaine contre la nature et le destin.",
+    "pageCount": 585
+  },
+  {
+    "title": "War and Peace",
+    "authors": [
+      {
+        "name": "Leo Tolstoy",
+        "books": [
+          { "title": "War and Peace" },
+          { "title": "Anna Karenina" }
+        ]
+      }
+    ],
+    "publicationDate": "1869-01-01",
+    "summary": "Une fresque historique qui explore la société russe, la guerre, l'amour et le destin à travers plusieurs familles.",
+    "pageCount": 1225
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "authors": [
+      {
+        "name": "J.D. Salinger",
+        "books": [
+          { "title": "The Catcher in the Rye" },
+          { "title": "Nine Stories" }
+        ]
+      }
+    ],
+    "publicationDate": "1951-07-16",
+    "summary": "Les aventures et la rébellion intérieure de Holden Caulfield face à l'hypocrisie de la société adulte.",
+    "pageCount": 234
+  },
+  {
+    "title": "The Hobbit",
+    "authors": [
+      {
+        "name": "J.R.R. Tolkien",
+        "books": [
+          { "title": "The Hobbit" },
+          { "title": "The Lord of the Rings" }
+        ]
+      }
+    ],
+    "publicationDate": "1937-09-21",
+    "summary": "Les aventures de Bilbo Baggins dans un monde fantastique rempli de dragons, d'elfes et de quêtes épiques.",
+    "pageCount": 310
+  },
+  {
+    "title": "Crime and Punishment",
+    "authors": [
+      {
+        "name": "Fyodor Dostoevsky",
+        "books": [
+          { "title": "Crime and Punishment" },
+          { "title": "The Brothers Karamazov" }
+        ]
+      }
+    ],
+    "publicationDate": "1866-01-01",
+    "summary": "Une étude psychologique intense sur la culpabilité et la rédemption à travers le personnage de Raskolnikov.",
+    "pageCount": 430
+  },
+  {
+    "title": "Brave New World",
+    "authors": [
+      {
+        "name": "Aldous Huxley",
+        "books": [
+          { "title": "Brave New World" },
+          { "title": "Island" }
+        ]
+      }
+    ],
+    "publicationDate": "1932-08-18",
+    "summary": "Une société futuriste où le conditionnement et la consommation remplacent la liberté individuelle et l'émotion.",
+    "pageCount": 311
+  },
+  {
+    "title": "The Odyssey",
+    "authors": [
+      {
+        "name": "Homer",
+        "books": [
+          { "title": "The Odyssey" },
+          { "title": "The Iliad" }
+        ]
+      }
+    ],
+    "publicationDate": "-800-01-01",
+    "summary": "L'épopée grecque qui raconte le long voyage d'Ulysse pour retourner chez lui après la guerre de Troie.",
+    "pageCount": 541
   }
 ]

@@ -45,7 +45,7 @@ class BookServiceIntegrationTest {
         Pageable pageable = PageRequest.of(0, 5);
         Page<BookLightweightDto> page = service.findAll(pageable);
         assertEquals(5, page.getContent().size()); 
-        assertEquals(10, page.getTotalElements());
+        assertEquals(24, page.getTotalElements());
 
 
 
@@ -72,11 +72,11 @@ class BookServiceIntegrationTest {
 
         assertTrue(service.existsById(savedBook.getId()));
 
-        assertEquals(11, service.findAll(pageable).getTotalElements());
+        assertEquals(25, service.findAll(pageable).getTotalElements());
 
         service.deleteById(savedBook.getId());
 
-        assertEquals(10, service.findAll(pageable).getTotalElements());
+        assertEquals(24, service.findAll(pageable).getTotalElements());
     }
 
 }
