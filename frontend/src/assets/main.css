@@ -1,0 +1,63 @@
+/* Applique une couleur de fond douce et une typo lisible */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8fafc; /* gris très clair */
+  color: #1e293b; /* texte gris foncé */
+}
+
+/* Container principal */
+.app {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Titre principal */
+.app h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #0f172a; /* presque noir */
+  text-align: center;
+}
+
+/* Message d’erreur */
+.error {
+  color: #dc2626; /* rouge */
+  font-weight: 500;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* PrimeVue DataTable customisation légère */
+.p-datatable {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  font-weight: 600;
+  font-size: 0.95rem;
+  background-color: #f1f5f9; /* gris clair */
+  color: #1e293b;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+}
+
+/* Pagination centrée */
+.p-paginator {
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.book-button {
+  margin-left: 8px;
+}

@@ -1,0 +1,6 @@
+declare module '@primeuix/themes/aura'
+declare module 'primevue/inputtext'
+declare module 'primevue/inputnumber'
+declare module 'primevue/DatePicker'
+declare module 'primevue/button'
+declare module 'primevue/dialog'
