@@ -33,6 +33,21 @@ Le projet peut être lancé entièrement via Docker Compose. Cela créera et dé
 
 1. Depuis la racine du projet, exécuter :
 
+### Build de l'image backend
+```bash
+cd backend
+docker build -t book-service .
+```
+
+### Build de l'image frontend
+
+```bash
+cd frontend
+docker build -t book-ui .
+```
+
+### Demarrer tout le projet
+
 ```bash
 docker-compose up
 ```
@@ -62,3 +77,9 @@ Se rendre dans le dossier frontend/ et suivre les instructions du README.md spé
 ```bash
 cd frontend
 ```
+
+
+### Améliorations à apporter au projet
+
+Les tests automatisés du frontend sont très faibles, par manque d'expertise sur le sujet.
+Une meilleure couverture du code du frontend par les tests serait une piste d'amélioration
