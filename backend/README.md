@@ -29,13 +29,7 @@ Il utilise **PostgreSQL** comme base de données et **Flyway** pour la gestion d
 
 ## ⚙️ Lancer en local
 
-### 1. Cloner le projet
-```bash
-git clone https://github.com/qngus/digital-library.git
-cd book-service
-```
-
-### 2. Lancer PostgreSQL en local (via Docker)
+### 1. Lancer PostgreSQL en local (via Docker)
 ```bash
 docker run --name postgres-books \
   -e POSTGRES_DB=books \
@@ -45,14 +39,14 @@ docker run --name postgres-books \
   -d postgres:16
 ```
 
-### 3. Lancer le backend
+### 2. Lancer le backend
 ```bash
 mvn spring-boot:run
 ```
 
 L’API sera disponible sur http://localhost:8080
 
-### 🐳 Docker
+### 3.🐳 Docker
 
 Builder l’image
 
