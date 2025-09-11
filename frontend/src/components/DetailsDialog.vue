@@ -19,6 +19,9 @@
           </li>
         </ul>
       </div>
+      <div class="chatbot-container">
+        <ChatBot :bookTitle="bookWithDetails.title" />
+      </div>
     </div>
   </Dialog>
 </template>
@@ -29,6 +32,7 @@ import Dialog from 'primevue/dialog'
 import type { Book } from '@/types/Book.ts'
 import { getBookById } from '@/services/BookService'
 import type { AxiosError } from 'axios'
+import ChatBot from './ChatBot.vue'
 
 const props = defineProps<{
   modelValue: boolean
@@ -65,3 +69,15 @@ watch(visible, async (isOpen) => {
   }
 })
 </script>
+
+<style scoped>
+.details-dialog {
+  max-width: 700px;
+}
+
+.chatbot-container {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+</style>

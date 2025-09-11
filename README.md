@@ -34,13 +34,13 @@ Le projet peut être lancé entièrement via Docker Compose. Cela créera et dé
 1. Depuis la racine du projet, exécuter :
 
 ```bash
-docker-compose up --build
+docker-compose up
 ```
 Accéder aux services :
 
 Frontend : http://localhost:5173
 
-Backend : http://localhost:8080
+Backend : http://localhost:8080/swagger-ui/index.html#/
 
 Pour arrêter les services :
 

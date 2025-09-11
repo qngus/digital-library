@@ -14,8 +14,10 @@ services:
     container_name: book-service
     depends_on:
       - db
+      - ollama-service
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/books
+      SPRING_PROFILES_ACTIVE: compose
     ports:
       - "8080:8080"
 
@@ -26,3 +28,18 @@ services:
       - backend
     ports:
       - "5173:80"
+
+  ollama-service:
+    image: ollama/ollama:latest
+    container_name: ollama-service
+    ports:
+      - "11434:11434"
+    entrypoint: ["/bin/bash", "-c", "\
+      ollama serve & \
+      sleep 5 && \
+      ollama pull llama3.2:1b && \
+      wait"]
+    deploy:
+      resources:
+        limits:
+          memory: 2g

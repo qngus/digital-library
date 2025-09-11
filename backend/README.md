@@ -39,14 +39,26 @@ docker run --name postgres-books \
   -d postgres:16
 ```
 
-### 2. Lancer le backend
+### 2. Lancer Ollama en local (via Docker)
+```bash
+docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+```
+
+#### Telecharger le modele mistral
+```bash
+docker exec -it ollama ollama pull llama3.2:1b
+```
+
+### 3. Lancer le backend
 ```bash
 mvn spring-boot:run
 ```
 
 L’API sera disponible sur http://localhost:8080
 
-### 3.🐳 Docker
+La documentation sera disponible sur http://localhost:8080/swagger-ui/index.html#/
+
+### 4.🐳 Docker
 
 Builder l’image
 
@@ -60,7 +72,7 @@ Lancer le conteneur
 docker run -p 8080:8080 --name book-service book-service
 ```
 
-### 4.🧪 Tests
+### 5.🧪 Tests
 
 Exécuter tous les tests :
 
