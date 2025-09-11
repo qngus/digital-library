@@ -3,4 +3,5 @@ export interface BookQueryParams {
   size: number
   title?: string
   author?: string
+  sort?: string[]
 }

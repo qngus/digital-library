@@ -5,6 +5,7 @@ import type { Page } from '@/types/Page.ts'
 import type { Error } from '@/types/Error.ts'
 import type { AxiosError, AxiosResponse } from 'axios'
 import api from './AxiosService.js'
+import qs from 'qs'
 import { errorState } from '@/state/ErrorState.js'
 
 async function handleRequest<T>(request: Promise<T>): Promise<T> {
@@ -28,7 +29,7 @@ async function handleRequest<T>(request: Promise<T>): Promise<T> {
 }
 
 export async function getBooks(params: BookQueryParams): Promise<Page<LightweightBook>> {
-  return handleRequest(api.get<Page<LightweightBook>>('/api/books', { params }).then((r: AxiosResponse) => r.data))
+  return handleRequest(api.get<Page<LightweightBook>>('/api/books', { params, paramsSerializer: params => qs.stringify(params, { arrayFormat: 'repeat' }) }).then((r: AxiosResponse) => r.data))
 }
 
 export async function getBookById(bookId: string): Promise<Book> {

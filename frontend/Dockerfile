@@ -1,12 +1,12 @@
 # Étape 1 : Build de l'application
-FROM node:20-alpine AS build
+FROM node:24-alpine AS build
 
 WORKDIR /app
 
 COPY package*.json ./
 
 RUN npm install
-RUN npm install -g vite vue-tsc npm-run-all
+RUN npm install -g vite vue-tsc npm-run-all qs
 
 COPY . .
 

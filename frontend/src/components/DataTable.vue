@@ -4,9 +4,12 @@
     :paginator="true"
     :rows="rows"
     :totalRecords="totalRecords"
+    :multiSortMeta="multiSortMeta"
+    :first="currentPage * rows"
     :lazy="true"
     @page="onPage"
     @filter="onFilter"
+    @sort="onSort"
     sortMode="multiple"
     responsiveLayout="scroll"
     stripedRows
@@ -34,7 +37,6 @@
     </Column>
     <Column
       header="Auteur"
-      sortable
       :filter="true"
       filterField="authors"
       filterPlaceholder="Filtrer par auteur"
@@ -101,7 +103,7 @@ import { ref, onMounted, reactive } from 'vue'
 import type { LightweightBook } from '../types/LightweightBook'
 import { getBooks, deleteBookById } from '../services/BookService'
 import type { AxiosError } from 'axios'
-import DataTable, { type DataTableFilterEvent } from 'primevue/datatable'
+import DataTable, { type DataTableFilterEvent, DataTableSortEvent, DataTableSortMeta  } from 'primevue/datatable'
 import Column from 'primevue/column'
 import Button from 'primevue/button'
 import { InputText } from 'primevue'
@@ -117,6 +119,9 @@ const books = ref<LightweightBook[]>([])
 const error = ref<string | null>(null)
 const totalRecords = ref(0)
 const rows = 5
+
+const multiSortMeta = ref<DataTableSortMeta []>([])
+const currentPage = ref(0)
 
 type UpdateLoading = (event: 'update:loading', value: boolean) => void
 const emit = defineEmits<UpdateLoading>()
@@ -159,7 +164,13 @@ function onEditDialogSave(updatedBook: LightweightBook) {
 }
 
 function onPage(event: PageEvent) {
+  currentPage.value = event.page
   loadBooks(event.page, event.rows)
+}
+
+function onSort(event: DataTableSortEvent) {
+  multiSortMeta.value = event.multiSortMeta ?? []
+  loadBooks(0, rows)
 }
 
 function onFilter(event: DataTableFilterEvent) {
@@ -182,6 +193,16 @@ async function loadBooks(page = 0, size = rows) {
 
     if (filters.title) params.title = filters.title
     if (filters.authors) params.author = filters.authors
+
+    if (multiSortMeta.value.length > 0) {
+      const sortParams = multiSortMeta.value
+        .filter(meta => meta.field) // ignore les champs undefined
+        .map(meta => `${meta.field},${meta.order === 1 ? 'asc' : 'desc'}`)
+
+      if (sortParams.length > 0) {
+        params.sort = sortParams
+      }
+    }
 
     const returnedPage: Page<LightweightBook> = await getBooks(params)
     books.value = returnedPage.content
