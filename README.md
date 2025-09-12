@@ -81,5 +81,7 @@ cd frontend
 
 ### Améliorations à apporter au projet
 
-Les tests automatisés du frontend sont très faibles, par manque d'expertise sur le sujet.
+* Les tests automatisés du frontend sont très faibles, par manque d'expertise sur le sujet.
 Une meilleure couverture du code du frontend par les tests serait une piste d'amélioration
+
+* Ajouter un test d'intégration pour valider le bon fonctionnement de la communication entre le backend et le model d'intelligence artificielle.
